@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && npm run server",
-    "build": "NODE_PATH=./src browserify src/index.jsx --extension .jsx -t [ babelify --extensions .jsx --presets [ es2015 stage-1 react ] --plugins transform-decorators-legacy ] -p [ css-modulesify -o public/bundle.css ] -o public/bundle.js",
-    "server": "browser-sync start --server public",
+    "start": "nf start",
+    "build": "NODE_PATH=./src watchify src/index.jsx -v --extension .jsx -t [ babelify --extensions .jsx ] -p [ css-modulesify -o public/bundle.css ] -o public/bundle.js",
+    "server": "browser-sync start --files 'public/*.css, public/*.js, public/*.html' --server public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -19,7 +19,9 @@
     "babelify": "^7.2.0",
     "browser-sync": "^2.11.1",
     "browserify": "^13.0.0",
-    "css-modulesify": "^0.16.1"
+    "css-modulesify": "^0.16.1",
+    "foreman": "^1.4.1",
+    "watchify": "^3.7.0"
   },
   "dependencies": {
     "react": "^0.14.7",
