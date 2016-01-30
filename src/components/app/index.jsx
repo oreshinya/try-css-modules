@@ -11,7 +11,12 @@ export default class App extends Component {
           <h1 styleName="title">Try CSS Modules</h1>
         </header>
         <section styleName="content">
-          Sample Content
+          <div styleName="leftContainer">
+            Left Content
+          </div>
+          <div styleName="rightContainer">
+            Right Content
+          </div>
         </section>
       </div>
     );

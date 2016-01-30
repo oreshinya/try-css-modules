@@ -1,7 +1,32 @@
+.container {
+  flex-grow: 1;
+}
+
 .title {
   color: red;
+
+  &:hover {
+    color: cyan;
+  }
 }
 
 .content {
-  color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftContainer {
+  composes: container;
+  background-color: yellow;
+
+  &:after {
+    content: "!!";
+  }
+}
+
+
+.rightContainer {
+  composes: container;
+  composes: mainBGColor from "../../commonStyles/color.css";
 }
