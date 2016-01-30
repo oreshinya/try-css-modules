@@ -28,5 +28,5 @@
 
 .rightContainer {
   composes: container;
-  composes: mainBGColor from "../../commonStyles/color.css";
+  composes: mainBGColor from "commonStyles/color.css";
 }

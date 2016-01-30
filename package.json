@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nf start",
-    "build": "NODE_PATH=./src watchify src/index.jsx -v --extension .jsx -t [ babelify --extensions .jsx ] -p [ css-modulesify --after autoprefixer --autoprefixer.browsers '> 5%' --after postcss-nested -o public/bundle.css ] -o public/bundle.js",
+    "build": "NODE_ENV=production NODE_PATH=./src watchify src/index.jsx -v --extension .jsx -t [ babelify --extensions .jsx ] -p [ css-modulesify --after autoprefixer --autoprefixer.browsers '> 5%' --after postcss-nested -o public/bundle.css ] -o public/bundle.js",
     "server": "browser-sync start --files 'public/*.css, public/*.js, public/*.html' --server public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
